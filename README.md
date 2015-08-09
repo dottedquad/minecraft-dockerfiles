@@ -32,6 +32,9 @@ TEKKIT=$(sudo docker run -p 25565:25565 -d -name='tekkit_v1' tekkit)
 MAPSERVER=$(sudo docker run -p 8000:8000 -d -name='tekkit_v1_map' mapserver)
 sudo docker run -volumes-from tekkit_v1 -volumes-from tekkit_v1_map -name='tekkit_mapgen' overviewer;
 
+Here's the command I used:
+docker run -t -i --restart=always --volumes-from='tekkit_vol' -p 25565:25565 -d -name='tekkit_v1' dottedquad/tekkit
+
 # Hexxit on alternative ports + initial map gen
 HEXXIT=$(sudo docker run -p 25566:25565 -d -name='hexxit_v1' hexxit)
 MAPSERVER=$(sudo docker run -p 8001:8000 -d -name='hexxit_v1_map' mapserver)
