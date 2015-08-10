@@ -13,8 +13,8 @@ ENV VERSION 1.6.4
 
 RUN wget --no-check-certificate https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/${VERSION}.jar -P ~/.minecraft/versions/${VERSION}/
 
-VOLUME www
-VOLUME minecraft
+VOLUME /www
+VOLUME /minecraft
 
 ENTRYPOINT ["overviewer.py"]
 CMD ["/minecraft/world", "/www"]
