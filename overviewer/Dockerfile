@@ -5,12 +5,16 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 RUN echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list
+RUN wget -O - http://overviewer.org/debian/overviewer.gpg.asc | apt-key add -
 RUN apt-get update
-RUN apt-get install -y --force-yes minecraft-overviewer wget
+RUN apt-get install -y minecraft-overviewer
 
-ENV VERSION 1.7.2
+ENV VERSION 1.6.4
 
 RUN wget --no-check-certificate https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/${VERSION}.jar -P ~/.minecraft/versions/${VERSION}/
+
+VOLUME www
+VOLUME minecraft
 
 ENTRYPOINT ["overviewer.py"]
 CMD ["/minecraft/world", "/www"]
