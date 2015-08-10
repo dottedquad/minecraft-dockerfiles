@@ -8,6 +8,7 @@ RUN echo "deb http://overviewer.org/debian ./" >> /etc/apt/sources.list
 RUN wget -O - http://overviewer.org/debian/overviewer.gpg.asc | apt-key add -
 RUN apt-get update
 RUN apt-get install -y minecraft-overviewer
+RUN apt-get install -y wget
 
 ENV VERSION 1.6.4
 
