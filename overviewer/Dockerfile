@@ -10,7 +10,7 @@ RUN wget -O - http://overviewer.org/debian/overviewer.gpg.asc | apt-key add -
 RUN apt-get update
 RUN apt-get install -y minecraft-overviewer
 
-ENV VERSION 1.6.4
+ENV VERSION 1.8
 
 RUN wget --no-check-certificate https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/${VERSION}.jar -P ~/.minecraft/versions/${VERSION}/
 
