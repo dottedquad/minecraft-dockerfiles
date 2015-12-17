@@ -1,21 +1,24 @@
-FROM ubuntu
+FROM ubuntu:trusty
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
 
-RUN apt-get install -y python-software-properties
-RUN add-apt-repository ppa:webupd8team/java -y
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get install -y software-software-properties
+RUN add-apt-repository ppa:webupd8team/java
 
 RUN apt-get update
-RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 
-RUN apt-get install -y oracle-java7-installer
+RUN apt-get install -y oracle-java8-installer
 RUN apt-get install -y wget
+RUN apt-get install -y unzip
 
 RUN mkdir /minecraft
-RUN wget -O /minecraft/minecraft.jar https://s3.amazonaws.com/Minecraft.Download/versions/1.6.2/minecraft_server.1.6.2.jar
-ADD launch.sh /minecraft/launch.sh
+RUN wget -O /minecraft/minecraft.jar https://s3.amazonaws.com/Minecraft.Download/versions/1.8.9/minecraft_server.1.8.9.jar
+
+ADD ./launch.sh /minecraft/launch.sh
 RUN chmod +x /minecraft/launch.sh
 
 VOLUME /minecraft
