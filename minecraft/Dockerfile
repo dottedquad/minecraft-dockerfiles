@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install -y software-software-properties
+RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:webupd8team/java
 
 RUN apt-get update
