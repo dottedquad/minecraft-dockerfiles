@@ -16,7 +16,7 @@ RUN apt-get install -y wget
 RUN apt-get install -y unzip
 
 RUN mkdir /minecraft
-RUN wget -O /minecraft/minecraft.jar https://s3.amazonaws.com/Minecraft.Download/versions/1.8.9/minecraft_server.1.8.9.jar
+RUN wget -O /minecraft/minecraft.jar https://s3.amazonaws.com/Minecraft.Download/versions/1.11.2/minecraft_server.1.11.2.jar
 
 ADD ./launch.sh /minecraft/launch.sh
 RUN chmod +x /minecraft/launch.sh
