@@ -5,7 +5,12 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -f install software-properties-common
+RUN apt-get install -y libsystemd0 networkd-dispatcher
+RUN apt-get install -y systemd systemd-sysv
+RUN apt-get install -y libpam-systemd
+RUN apt-get install -y policykit-1
+RUN apt-get install -y packagekit
+RUN apt-get install -y software-properties-common
 RUN add-apt-repository -y ppa:webupd8team/java
 
 RUN apt-get update
