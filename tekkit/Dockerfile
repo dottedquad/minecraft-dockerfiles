@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:focal
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu focal main universe" > /etc/apt/sources.list
 RUN apt-get update
