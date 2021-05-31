@@ -5,9 +5,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install -y policykit-1
-RUN apt-get install -y packagekit
-RUN apt-get install -y software-properties-common
+RUN apt-get install -y software-properties-common -f
 RUN add-apt-repository -y ppa:webupd8team/java
 
 RUN apt-get update
