@@ -3,6 +3,8 @@ A finished docker product to run Minecraft, Tekkit, Hexxit, and Overviewer (onli
 * Advanced Docker Volume tutorial: http://crosbymichael.com/advanced-docker-volumes.html
 * Dockerfiles: https://github.com/crosbymichael/Dockerfiles
 
+## KB WUZ HERE!!
+
 ## Requirements
 1. Docker
 2. Some basic docker and linux knowledge
